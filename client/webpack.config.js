@@ -24,19 +24,21 @@ module.exports = () => {
       }),
       new InjectManifest({
 
-        swSrc: ".//src-sw.js",
+        swSrc: "./src-sw.js",
         swDest: "src-sw.js",
 
       }),
 
       new WebpackPwaManifest({
+        fingerprints: false,
+        inject: true,
         name: 'Just Another Text Editor',
         short_name: 'JATE',
         description: 'Create notes or code snippets with or without an internet connection',
         background_color: '#7eb4e2',
         theme_color: '#7eb4e2',
-        start_url: './',
-        publicPath: './',
+        start_url: '/',
+        publicPath: '/',
         icons: [
           {
             src: path.resolve('src/images/logo.png'),
